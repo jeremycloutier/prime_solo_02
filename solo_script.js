@@ -1,8 +1,10 @@
 // ! ! !
-// 1. All "array1" references in calculateSTI should be "array".
-// 2. I can tell that several non-numbers are being logged to the console,
-//    obviously, but my attempts couldn't identify the cause.
-// 3. I updated some styling, but I am not sure what I am missing.
+// 1. All "array1" references in function calculateSTI should be "array".
+// 2. The for loop on line 22 was not moving through the array, 
+//    so I added an [i] at the end of calculatesSTI(array) on line 23.
+// 3. Line 70, remove the "-1" from 'return basePercent-1' to get 
+//    'return basePercent'.
+
 
 var arrayAtticus = ["Atticus", "2405", "47000", 3];
 var arrayJem = ["Jem", "62347", "63500", 4];
@@ -19,7 +21,7 @@ position = document.getElementById('content');
 //Loop the array, extracting each array and writing information to the DOM
 //Note that the information is not 'clean'
 for(var i = 0; i < array.length; i++){
-	array[i] = calculateSTI(array);
+  array[i] = calculateSTI(array[i]);
  	newEl = document.createElement('li');
 	newText = document.createTextNode(array[i]);
 	newEl.appendChild(newText);
@@ -66,7 +68,7 @@ function getBaseSTI(reviewScore){
       basePercent = 0.10;
       break;
   }
-  return basePercent - 1;
+  return basePercent;
 }
 
 function getYearAdjustment(employeeNumber){
