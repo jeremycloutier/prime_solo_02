@@ -1,10 +1,9 @@
 // ! ! !
-// 1. All "array1" references in function calculateSTI should be "array".
-// 2. The for loop on line 22 was not moving through the array, 
-//    so I added an [i] at the end of calculatesSTI(array) on line 23.
-// 3. Line 70, remove the "-1" from 'return basePercent-1' to get 
+// 1. The for loop on line 23 was not moving through the array, 
+//    so I added an [i] at the end of calculatesSTI(array) on line 24.
+// 2. Line 71, remove the "-1" from 'return basePercent-1' to get 
 //    'return basePercent'.
-
+// 3. On line 45 I added Math.Round to newArray[2].
 
 var arrayAtticus = ["Atticus", "2405", "47000", 3];
 var arrayJem = ["Jem", "62347", "63500", 4];
@@ -43,7 +42,7 @@ function calculateSTI(array){
   }
 
   newArray[1] = bonus;
-  newArray[2] = baseSalary * (1.0 + bonus);
+  newArray[2] = Math.round(baseSalary * (1.0 + bonus));
   newArray[3] = Math.round(baseSalary * bonus);
   console.log(newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3]);
     return newArray;
